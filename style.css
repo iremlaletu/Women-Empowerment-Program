@@ -11,8 +11,8 @@
 
 :root {
     --bg-color:#1f2937;
-    --second-bg-color: #161f38;
-    --text-color:white;
+    --second-bg-color: #e7eef6;
+    --text-color:black;
     --spacing: 0.25rem;
 }
 
@@ -36,7 +36,7 @@ body {
     left: 0;
     width: 100%;
     padding: 2rem 9%;
-    background: rgba(0, 0, 0, 0.9);
+    background: var(--second-bg-color);
     display: flex;
     justify-content:space-between;
     align-items: center;
@@ -80,7 +80,7 @@ body {
     font-size: 13px;
     border-radius: 1px;
     border: 1px solid var(--text-color);
-    color: #fff;
+    color: #0d3670;
     width: 30px;
     height: 30px;
     display: flex;
@@ -111,7 +111,7 @@ body {
 }
 
 .bg-container .bgtext{
-    color: #fff;
+    color: var(--text-color);
 }
 
 .bg-container .bg-box{
@@ -119,7 +119,7 @@ body {
     font-size: 13px;
     border-radius: 1px;
     border: 1px solid var(--text-color);
-    color: #fff;
+    color: #0d3670;
 }
 
 .bg-container .bg-box i {
@@ -148,58 +148,70 @@ section {
 /* HOME SECTİON CONTENT */
 
 .home {
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    gap: 8rem;
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
 }
 
 .home-content{
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    justify-content:center;
+    width: 80%;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
+    overflow-x: hidden;
+    padding: 10rem 0;
 }
 
-.home-content h1 {
-    font-size: 2rem;
-    font-weight: 500;
-    line-height: 1.3;
-    color: #fff;
-    text-align: center;
-    margin-top: 1.5rem;
+.home-content .home-img{
+    overflow: hidden;
 }
 
-.home-content p {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: var(--text-color);
-    white-space: pre-line;
-    text-align: center;
-    animation: slide 1s ease-in-out forwards;
-}
-
-@keyframes slide {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-}
-
-.home-img {
-    border-radius: 100%;
-    text-align: center;
-}
-
-.home-img img {
-    position: relative;
-    border-radius: 50%;
-    width: 15vw;
-    box-shadow: 0 0 15px var(--bg-color);
+.home-content .home-img img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
     cursor: pointer;
-    transition: 0.4s ease-in-out;
+}
+
+.home-content .contentWrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.home-content .contentWrapper span.textWrapper{
+    display: flex;
+    font-size: 3rem;
+    line-height: 1.3;
+    color: var(--text-color);
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.home-content .contentWrapper span.textWrapper span {
+    display: inline-block;
+    background: var(--text-color);
+    width: 70px;
+    height: 5px;
+}
+
+.home-content .contentWrapper h2{
+    font-size: 2rem;
+    font-weight: normal;
+    color: var(--text-color);
+    padding-bottom: 20px;
+}
+
+.home-content .contentWrapper p {
+    font-size: 1.5rem;
+    line-height: 25px;
+    color: var(--text-color);
 }
 
 .social-icons{
@@ -216,15 +228,13 @@ section {
     border: 1px solid #edf2fc;
     font-size: 20px;
     border-radius: 50%;
-    color: var(--text-color);
     margin: 3rem 1.5rem 3rem 0;
     transition: 0.3s ease-in-out;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .social-icons a:hover {
-    color: var(--text-color);
-    border: 1px solid red;
+    color: black;
 }
 
 /* SERVİCE SECTİON CONTENT */
@@ -247,16 +257,13 @@ section {
     align-items: center;
     justify-content:space-evenly;
     text-align: center;
-    border-radius: 2px;
-    border: 1px solid black;
     height: 350px;
     width: 400px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
-    
+    position: relative;
 }
 
 .service-container .service-box:hover {
-    border: 1px solid var(--text-color);
+    border: 1px solid black;;
 }
 
 .service-box i{
@@ -268,15 +275,32 @@ section {
 
 .service-box h3, .profile-box h5, .certificate-box h5 {
     margin-top: 2rem;
-    color: var(--text-color);
     font-size: 2rem;
+    color: var(--text-color);
+    position: relative;
+}
+
+.service-box h3::after, .profile-box h5::after, .certificate-box h5::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.service-box:hover h3::after, .profile-box:hover h5::after, .certificate-box:hover h5::after {
+    width: 100%;
 }
 
 .service-box p, .profile-box p, .certificate-box p {
-    color: var(--text-color);
     font-size: 1.7rem;
     margin: 0.5rem 1.5rem 3rem;
     font-weight: 300;
+    color: var(--text-color);
 }
 
 /* PROFİLE SECTİON CONTENT */
@@ -299,17 +323,15 @@ section {
     align-items: center;
     justify-content:space-between;
     text-align: center;
-    border-radius: 2px;
-    border: 1px solid black;
     height: 450px;
     width: 500px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
+    position: relative;
 }
 
-.profile-container .profile-box:hover{
-    border: 1px solid var(--text-color);
-    cursor: pointer;
+.profile-container .profile-box:hover {
+    border: 1px solid black;;
 }
+
 
 .profile-box p{
     padding: 0 3rem;
@@ -325,6 +347,7 @@ section {
     background-color: rgba(255, 255, 255, 0.808);
     border: 1px solid white;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
+    
 }
 
 .modal-header h2, .modal-body ol li{
@@ -432,7 +455,7 @@ section {
     align-items: center;
     font-weight: 300;
     font-size: 2.5em;
-    color:var(--text-color);
+    color:white;
     margin-bottom: 2rem;
 }
 
@@ -452,7 +475,7 @@ section {
 
 .about-img{
     border-radius: 50%;
-    border: 2px solid var(--text-color);
+    border: 2px solid white;
     width: 150px;
     height: 150px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
@@ -481,9 +504,10 @@ ul, ol {
   position: absolute;
   height: 100%;
   width: 3px;
-  background-color: var(--text-color);
+  background-color: rgba(0, 0, 0, 0.486);
   left: 51%;
   top: 0;
+  
 }
 
 .timeline ul::after{
@@ -514,10 +538,10 @@ ul, ol {
 }
 
 .timeline-description h4{
-    color: var(--text-color);
     font-size: 2rem;
     margin: 1rem 0 3rem;
     font-weight: 600;
+    color: var(--text-color);
 }
 
 /* CERTİFİCATE SECTİON */
@@ -540,15 +564,13 @@ ul, ol {
     align-items: center;
     justify-content:space-between;
     text-align: center;
-    border-radius: 2px;
-    border: 1px solid black;
-    height: 350px;
-    width: 430px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
+    height: 300px;
+    width: 380px;
+    position: relative;
 }
 
 .certificate-container .certificate-box:hover{
-    border: 1px solid var(--text-color);
+    border: 1px solid white;
 }
 
 .certificate-box button{
@@ -558,7 +580,7 @@ ul, ol {
 .copyright{
     text-align: center;
     margin-top: 2rem;
-    color: white;
+    color: black;
 }
 
 /* BUTTONS */
@@ -585,7 +607,7 @@ button.learn-more {
 button.learn-more .circle {
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     position: relative;
-    box-shadow: 0 0 5px 1px var(--text-color);
+    box-shadow: 0 0 5px 1px white;
     display: block;
     margin: 0;
     width: 3rem;
@@ -600,7 +622,7 @@ button.learn-more .circle .icon {
     top: 0;
     bottom: 0;
     margin: auto;
-    background:var(--text-color)
+    background:white
 }
 
 button.learn-more .circle .icon.arrow {
@@ -619,7 +641,7 @@ button.learn-more .circle .icon.arrow::before {
     width: 0.625rem;
     height: 0.625rem;
     border-top: 0.125rem solid red;
-    border-right: 0.125rem solid var(--text-color);
+    border-right: 0.125rem solid white;
     transform: rotate(45deg);
 }
 
@@ -632,7 +654,7 @@ button.learn-more .button-text {
     bottom: 0;
     padding: 0.75rem 0;
     margin: 0 0 0 1.85rem;
-    color: rgba(255, 255, 255, 0.493);
+    color: black;
     font-weight: 900;
     line-height: 1.6;
     text-align: center;
@@ -648,7 +670,7 @@ button:hover .circle .icon.arrow {
 }
 
 button:hover .button-text {
-    color:var(--text-color);
+    color:white;
 }
 
 .logo img{
@@ -666,14 +688,17 @@ button:hover .button-text {
 
 /* RESPONSİVE */
 
-@media (max-width:1200px) {
-   
-    .home-img img{
-        width: 30vw;
-    }
-}
 
 @media (max-width:1000px){
+
+    .home-content{
+        grid-template-columns: 1fr;
+        grid-gap: 50px;
+    }
+
+    .home-content .contentWrapper{
+        padding-left: 0;
+    }
 
     header{
         padding: 2rem 3%;
@@ -691,12 +716,12 @@ button:hover .button-text {
         position: absolute;
         top: 100%;
         right: 0;
-        width: 58%;
+        width: 100%;
         display: none;
         padding: 1rem 3%;
         border-left: 2px solid white;
         border-bottom: 2px solid white;
-        background: rgba(0, 0, 0, 0.6);
+        background: rgb(0, 0, 0);
     }
 
     .navbar.active{
@@ -709,38 +734,17 @@ button:hover .button-text {
         margin: 3rem 0;
     }
 
-    .home{
-        flex-direction: column;
-        margin: 4rem 2rem;
-    }
-
-    .home-content h1{
-        font-size: 4rem;
-    }
-
-    .home-img img{
-        width: 45vw;
-        margin-top: 4rem;
-    }
-
-    .home-content p {
-        text-align: center;
-        white-space:unset;
-    }
-
     .heading{
         font-size: 10rem;
     }
 
     .service-box h3, .profile-box h5, .certificate-box h5 {
         margin-top: 2rem;
-        color: var(--text-color);
         font-size: 1.8rem;
         letter-spacing: var(--spacing);
     }
     
     .service-box p, .profile-box p, .certificate-box p{
-        color: var(--text-color);
         font-size: 1.3rem;
         margin: 0.5rem 1rem 2rem;
         font-weight: 300;
@@ -748,9 +752,27 @@ button:hover .button-text {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+
+    .home-content{
+        width: 90%;
+    }
+
+    .home-content .contentWrapper h2{
+        font-size: 30px;
+        padding-bottom: 20px;
+    }
+
+    .home-content .contentWrapper p {
+        font-size: 18px;
+        line-height: 24px;
+    }
    
     .bg-container {
       display: none;
+    }
+
+    .profile-box, .service-box, .certificate-box{
+        border: 1px solid white
     }
 }

@@ -27,7 +27,7 @@ changeTheme.addEventListener('click', () => {
     }
 
     setTimeout(() => {
-        rocket.style.transform = 'translateX(600px) rotate(-45deg) ';
+        rocket.style.transform = 'translateX(420px) rotate(-45deg) ';
     })
 })
 
@@ -35,7 +35,7 @@ changeTheme.addEventListener('click', () => {
 
 ScrollReveal({ 
     reset: true,
-    distance: "20px",
+    distance: "10px",
     duration: 1500,
     delay: 300,
 })
@@ -86,10 +86,12 @@ menuIcon.onclick = () => {
 
 mountainbg.addEventListener("click", () => {
     changeBackground("assets/img/bg.jpeg")
+    document.documentElement.style.setProperty('--text-color', 'white');
 })
 
 forestbg.addEventListener("click", () => {
     changeBackground("assets/img/forestbg.jpeg")
+    document.documentElement.style.setProperty('--text-color', 'white');
 })
 
 seabg.addEventListener("click", () => {
