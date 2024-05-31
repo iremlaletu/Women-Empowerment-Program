@@ -1,9 +1,4 @@
 
-let changeTheme = document.querySelector(".theme-toggle");
-let modeMoon = document.querySelector("#moonMode");
-let modeSun = document.querySelector("#sunMode");
-let rocket = document.querySelector("#rocket");
-
 let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
 let sections = document.querySelectorAll("section");
@@ -13,23 +8,6 @@ let mountainbg = document.querySelector("#mountainbg");
 let forestbg = document.querySelector("#forestbg");
 let seabg = document.querySelector("#seabg");
 
-// handling the rocket
-changeTheme.addEventListener('click', () => {
-    document.body.classList.toggle("dark-theme")
-    if (modeMoon.style.display !== "none") {
-        modeMoon.style.display = "none";
-        modeSun.style.display = "inline";
-        rocket.style.opacity = '1';
-    } else {
-        modeMoon.style.display = "inline";
-        modeSun.style.display = "none";
-        rocket.style.opacity = '0';
-    }
-
-    setTimeout(() => {
-        rocket.style.transform = 'translateX(420px) rotate(-45deg) ';
-    })
-})
 
 // Page scrolling
 
@@ -96,6 +74,7 @@ forestbg.addEventListener("click", () => {
 
 seabg.addEventListener("click", () => {
     changeBackground("assets/img/seaabg.jpeg")
+    document.documentElement.style.setProperty('--text-color', 'white');
 })
 
 function changeBackground(backgroundImageUrl) {
