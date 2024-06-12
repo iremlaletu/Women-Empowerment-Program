@@ -68,16 +68,6 @@ body {
     display: none;
 }
 
-/* ROCKET */
-
-
-#rocket{
-    opacity: 0;
-    font-size: 2em;
-    transition: transform 5s ease-in-out;
-    width: fit-content;
-}
-
 /* BACKGROUND OPTİONS */
 
 .bg-container{
@@ -150,10 +140,11 @@ section {
 }
 
 .home-content .home-img img {
-    width: 85%;
-    height: 85%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     cursor: pointer;
+    background-color: transparent;
 }
 
 .home-content .contentWrapper{
