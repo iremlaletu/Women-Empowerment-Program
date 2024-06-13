@@ -4,6 +4,7 @@ let navbar = document.querySelector(".navbar");
 let sections = document.querySelectorAll("section");
 let navlinks = document.querySelectorAll("header nav a")
 
+let bgTextColor = document.querySelector(".bgtext")
 let mountainbg = document.querySelector("#mountainbg");
 let forestbg = document.querySelector("#forestbg");
 let seabg = document.querySelector("#seabg");
@@ -64,19 +65,18 @@ menuIcon.onclick = () => {
 
 mountainbg.addEventListener("click", () => {
     changeBackground("assets/img/bg.jpeg")
-    document.documentElement.style.setProperty('--text-color', 'white');
 })
 
 forestbg.addEventListener("click", () => {
     changeBackground("assets/img/forestbg.jpeg")
-    document.documentElement.style.setProperty('--text-color', 'white');
 })
 
 seabg.addEventListener("click", () => {
     changeBackground("assets/img/seaabg.jpeg")
-    document.documentElement.style.setProperty('--text-color', 'white');
 })
 
 function changeBackground(backgroundImageUrl) {
+    document.documentElement.style.setProperty('--text-color', 'white');
+    bgTextColor.style.color = "black"
     document.body.style.backgroundImage = "url('" + backgroundImageUrl + "')";
 }

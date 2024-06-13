@@ -123,12 +123,12 @@ section {
 }
 
 .home-content{
-    width: 80%;
+    width: 90%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 50px;
     overflow-x: hidden;
-    padding: 10rem 0;
+    padding: 8rem 0;
 }
 
 .home-content .home-img{
@@ -658,7 +658,7 @@ button:hover .button-text {
 
     .home-content{
         grid-template-columns: 1fr;
-        grid-gap: 50px;
+        grid-gap: 10px;
     }
 
     .home-content .contentWrapper{
@@ -718,7 +718,12 @@ button:hover .button-text {
 @media (max-width: 768px) {
 
     .home-content{
-        width: 90%;
+        width: 100%;
+        padding: 3rem 0;
+    }
+
+    .social-icons{
+        text-align: justify;
     }
 
     .home-content .contentWrapper h2{
