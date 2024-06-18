@@ -3,6 +3,7 @@ let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
 let sections = document.querySelectorAll("section");
 let navlinks = document.querySelectorAll("header nav a")
+let cvdownload = document.querySelector("#cvdownload")
 
 let bgTextColor = document.querySelector(".bgtext")
 let mountainbg = document.querySelector("#mountainbg");
@@ -80,3 +81,9 @@ function changeBackground(backgroundImageUrl) {
     bgTextColor.style.color = "black"
     document.body.style.backgroundImage = "url('" + backgroundImageUrl + "')";
 }
+
+// download cv
+
+cvdownload.addEventListener("click", () => {
+    window.open("./assets/img/cv.png")
+})
