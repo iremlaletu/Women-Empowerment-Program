@@ -127,23 +127,20 @@ section {
     grid-gap: 50px;
     overflow-x: hidden;
     padding: 4rem 0;
+    place-items: center;
 }
 
 .home-content .home-img{
-    display: flex;
-    justify-content: center;
-    align-items: center ;
-    width: 85%;
-    height: 85%;
+    width: 80%;
+    place-items: center;
 }
 
 .home-content .home-img img {
-    width: 95%;
-    height: 95%;
+    width: 100%;
+    height: auto;
     object-fit: cover;
     cursor: pointer;
     background-color: transparent;
-    align-self: center;
 }
 
 .home-content .contentWrapper{
@@ -318,6 +315,7 @@ section {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 4rem
 }
 
 .profile-container .profile-box{
@@ -698,7 +696,7 @@ footer{
     }
 
     .home-content .contentWrapper{
-        padding-left: 0;
+        padding-left: 2rem;
     }
 
     header{
@@ -706,7 +704,7 @@ footer{
     }
 
     section{
-        padding: 10rem 0 2rem 8%;
+        padding: 10rem 0 2rem 0;
     }
 
     #menu-icon{
@@ -752,6 +750,15 @@ footer{
 
     .profile-box p{
         padding: 1rem 3rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .home-content .home-img{
+        text-align: center;
+    }
+    .home-content .home-img img {
+      width: 60%;
     }
 }
 
