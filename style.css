@@ -9,7 +9,7 @@
 }
 
 :root {
-    --bg-color: #e7eef6;
+    --bg-color: #eff2f6;
     --text-color:black;
     --spacing: 0.25rem;
 }
@@ -572,8 +572,9 @@ ul, ol {
 
 .copyright{
     text-align: center;
-    margin-top: 2rem;
-    color: black;
+    margin-top: 1rem;
+    color: rgb(69, 68, 68);
+    margin-bottom: 0;
 }
 
 /* BUTTONS */
@@ -680,7 +681,6 @@ footer{
 
 .logo{
     text-align: center;
-    margin-top: 50px;
     padding: 1rem;
  }
 
